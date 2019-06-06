@@ -1,0 +1,159 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	overflow: hidden;
+}
+
+/* loader */
+.loader-transitions {
+	min-height: 100vh;
+	min-width: 100vw;
+	overflow: hidden;
+}
+
+.loader-transitions > span.loader-block {
+	display: block;
+	float: left;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0,0,0,0.5);
+	transition: all 0.5s ease;
+}
+
+.loader-wrapper {
+	height: 75px;
+	width: 75px;
+	background-color: transparent;
+	z-index: 1000;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.loader {
+	display: block;
+	border: 8px solid #f7fbfe;
+	border-radius: 50%;
+	border-top: 8px solid #363638;
+	width: 75px;
+	height: 75px;
+	animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+
+/*navbar*/
+nav.navbar {
+	position: sticky;
+	top: 0;
+	margin: 0;
+	padding: 0;
+	z-index: 100;
+}
+
+nav.navbar > ul.navbar-list,
+nav.navbar > ul.navbar-list > li.navbar-group > ul.navbar-list {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	list-style-type: none;
+	overflow: hidden;
+	background-color: black;
+}
+
+nav.navbar > ul.navbar-list > li.navbar-group {
+	float: right;
+}
+
+li.navbar-group > ul.navbar-list > li.navbar-item {
+	float: left;
+}
+
+nav.navbar > ul.navbar-list > li.navbar-item > a.navbar-link,
+li.navbar-group > ul.navbar-list > li.navbar-item > a.navbar-link {
+	display: block;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	padding: 18px 20px;
+}
+
+nav.navbar > ul.navbar-list > li.navbar-item > a.navbar-link:hover,
+li.navbar-group > ul.navbar-list > li.navbar-item > a.navbar-link:hover {
+	background-color: blue;
+}
+
+.pull-left {
+	float: left !important;
+}
+
+.active-nav {
+	background-color: red;
+}
+
+section {
+	min-height: 100vh;
+	min-width: 100vw;
+}
+
+section#about,
+section#skills,
+section#projects,
+section#contact {
+	padding-top: 100px !important;
+}
+
+/*landing page*/
+section#home {
+	/*temporary design*/
+	min-height: 100vh;
+	min-width: 100vw;
+	background-color: lime;
+}
+
+/*about*/
+/*section#about.container-fluid,
+section#about.container-fluid > div.row.justify-content-center,
+section#about.container-fluid > div.row.justify-content-center > div[class*='col'] > div.row {
+	margin: 0;
+	padding: 0;
+}*/
+section#about.container-fluid,
+section#about.container-fluid div.row {
+	margin: 0;
+	padding: 0;
+}
+
+/*div#left-about > img {
+	height: 100%;
+	width: 100%;
+}*/
+
+/*skills*/
+section#skills.container-fluid,
+section#skills.container-fluid div.row {
+	margin: 0;
+	padding: 0;
+}
+
+/*projects*/
+section#projects.container-fluid,
+section#projects.container-fluid div.row {
+	margin: 0;
+	padding: 0;
+}
+
+/*contact*/
+section#contact.container-fluid,
+section#contact.container-fluid div.row {
+	margin: 0;
+	padding: 0;
+}
