@@ -56,9 +56,11 @@ nav.navbar {
 	top: 0;
 	margin: 0;
 	padding: 0;
+	z-index: 100;
 }
 
-nav.navbar > ul.navbar-list {
+nav.navbar > ul.navbar-list,
+nav.navbar > ul.navbar-list > li.navbar-group > ul.navbar-list {
 	margin: 0;
 	padding: 0;
 	width: 100%;
@@ -67,11 +69,16 @@ nav.navbar > ul.navbar-list {
 	background-color: black;
 }
 
-nav.navbar > ul.navbar-list > li.navbar-item {
+nav.navbar > ul.navbar-list > li.navbar-group {
 	float: right;
 }
 
-nav.navbar > ul.navbar-list > li.navbar-item > a.navbar-link {
+li.navbar-group > ul.navbar-list > li.navbar-item {
+	float: left;
+}
+
+nav.navbar > ul.navbar-list > li.navbar-item > a.navbar-link,
+li.navbar-group > ul.navbar-list > li.navbar-item > a.navbar-link {
 	display: block;
 	color: white;
 	text-align: center;
@@ -79,10 +86,74 @@ nav.navbar > ul.navbar-list > li.navbar-item > a.navbar-link {
 	padding: 18px 20px;
 }
 
-nav.navbar > ul.navbar-list > li.navbar-item > a.navbar-link:hover {
+nav.navbar > ul.navbar-list > li.navbar-item > a.navbar-link:hover,
+li.navbar-group > ul.navbar-list > li.navbar-item > a.navbar-link:hover {
 	background-color: blue;
 }
 
 .pull-left {
 	float: left !important;
+}
+
+.active-nav {
+	background-color: red;
+}
+
+section {
+	min-height: 100vh;
+	min-width: 100vw;
+}
+
+section#about,
+section#skills,
+section#projects,
+section#contact {
+	padding-top: 100px !important;
+}
+
+/*landing page*/
+section#home {
+	/*temporary design*/
+	min-height: 100vh;
+	min-width: 100vw;
+	background-color: lime;
+}
+
+/*about*/
+/*section#about.container-fluid,
+section#about.container-fluid > div.row.justify-content-center,
+section#about.container-fluid > div.row.justify-content-center > div[class*='col'] > div.row {
+	margin: 0;
+	padding: 0;
+}*/
+section#about.container-fluid,
+section#about.container-fluid div.row {
+	margin: 0;
+	padding: 0;
+}
+
+/*div#left-about > img {
+	height: 100%;
+	width: 100%;
+}*/
+
+/*skills*/
+section#skills.container-fluid,
+section#skills.container-fluid div.row {
+	margin: 0;
+	padding: 0;
+}
+
+/*projects*/
+section#projects.container-fluid,
+section#projects.container-fluid div.row {
+	margin: 0;
+	padding: 0;
+}
+
+/*contact*/
+section#contact.container-fluid,
+section#contact.container-fluid div.row {
+	margin: 0;
+	padding: 0;
 }
