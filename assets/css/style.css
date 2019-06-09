@@ -1,3 +1,16 @@
+:root {
+	--main-bg-color: #FDFFFC;
+	--main-fg-color: #011627;
+	--main-secondary-color: #58B09C;
+	--main-secondary-color-bright: #35C1C2;
+	--main-strong-highlight: #E71D36;
+	--main-strong-hightlight-bright: #F71735;
+	--main-secondary-highlight: #FF9F1C;
+	--main-page-color-linen: #F7F0e6;
+	--main-page-color-gainsboro: #DCDFE2;
+	--main-page-color-columbia-blue: #C5D1EB;
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -8,8 +21,17 @@ body {
 	overflow: hidden;
 }
 
+body,
+section,
+.row {
+	background-color: var(--main-page-color-linen);
+}
+
 /* loader */
-.loader-transitions {
+/*.loader-transitions {
+	position: fixed;
+	top: 0;
+	left: 0;
 	min-height: 100vh;
 	min-width: 100vw;
 	overflow: hidden;
@@ -22,14 +44,14 @@ body {
 	height: 100vh;
 	background-color: rgba(0,0,0,0.5);
 	transition: all 0.5s ease;
-}
+}*/
 
 .loader-wrapper {
 	height: 75px;
 	width: 75px;
 	background-color: transparent;
 	z-index: 1000;
-	position: absolute;
+	position: fixed;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
@@ -66,7 +88,7 @@ nav.navbar > ul.navbar-list > li.navbar-group > ul.navbar-list {
 	width: 100%;
 	list-style-type: none;
 	overflow: hidden;
-	background-color: black;
+	background-color: var(--main-bg-color);
 }
 
 nav.navbar > ul.navbar-list > li.navbar-group {
@@ -80,7 +102,10 @@ li.navbar-group > ul.navbar-list > li.navbar-item {
 nav.navbar > ul.navbar-list > li.navbar-item > a.navbar-link,
 li.navbar-group > ul.navbar-list > li.navbar-item > a.navbar-link {
 	display: block;
-	color: white;
+	color: var(--main-fg-color);
+	font-size: 12px;
+	letter-spacing: 2px;
+	text-transform: capitalize;
 	text-align: center;
 	text-decoration: none;
 	padding: 18px 20px;
@@ -88,7 +113,7 @@ li.navbar-group > ul.navbar-list > li.navbar-item > a.navbar-link {
 
 nav.navbar > ul.navbar-list > li.navbar-item > a.navbar-link:hover,
 li.navbar-group > ul.navbar-list > li.navbar-item > a.navbar-link:hover {
-	background-color: blue;
+	color: var(--main-strong-hightlight-bright);
 }
 
 .pull-left {
@@ -96,7 +121,8 @@ li.navbar-group > ul.navbar-list > li.navbar-item > a.navbar-link:hover {
 }
 
 .active-nav {
-	background-color: red;
+	border-bottom: solid 1px var(--main-strong-hightlight-bright);
+
 }
 
 section {
@@ -130,6 +156,11 @@ section#about.container-fluid,
 section#about.container-fluid div.row {
 	margin: 0;
 	padding: 0;
+}
+
+div#left-about > img {
+	width: 100%;
+	filter: drop-shadow(2px 4px 2px var(--main-strong-highlight));
 }
 
 /*div#left-about > img {
