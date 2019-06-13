@@ -1,6 +1,7 @@
 :root {
 	--main-bg-color: #FDFFFC;
 	--main-fg-color: #011627;
+	--main-fg-color-message: #1A3851;
 	--main-secondary-color: #58B09C;
 	--main-secondary-color-bright: #35C1C2;
 	--main-strong-highlight: #E71D36;
@@ -15,10 +16,12 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	font-family: 'Merriweather Sans', sans-serif;
 }
 
 body {
 	overflow: hidden;
+	overflow-x: hidden;
 }
 
 body,
@@ -27,6 +30,130 @@ section,
 	background-color: var(--main-page-color-linen);
 }
 
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Anton', sans-serif;
+}
+
+.fg-main {
+	color: var(--main-fg-color);
+}
+
+.fg-secondary {
+	color: var(--main-secondary-color);
+}
+
+.fg-secondary-bright {
+	color: var(--main-secondary-color-bright);
+}
+
+.fg-message {
+	color: var(--main-fg-color-message);
+	letter-spacing: 1px;
+	font-size: 12px;
+}
+
+.hightlight-strong {
+	background-color: var(--main-strong-highlight);
+	color: var(--main-bg-color);
+}
+
+.hightlight-strong-bright {
+	background-color: var(--main-strong-hightlight-bright);
+	color: var(--main-fg-color);
+}
+
+.header-expand {
+	padding: 10px;
+	border-radius: 10px;
+	text-transform: uppercase;
+	text-align: center;
+	letter-spacing: 10px;
+}
+
+.text-lead {}
+
+div.owl-item > div.card > div.card-body > p.card-text {
+	font-size: 0.8rem;
+	height: 240px !important;
+}
+
+div.owl-item > div.card > div.card-body > h6.card-subtitle {
+	/*height: 350px;*/
+	height: 45px !important;
+}
+
+div.owl-item > div.card > div.card-footer {
+	background-color: transparent !important;
+	border: 0 !important;
+}
+
+/*tile*/
+div.tile {
+	/*border: solid 1px var(--main-page-color-linen);*/
+	/*border-radius: 10px;*/
+	margin: 0;
+	padding: 0;
+	/*cursor: pointer;*/
+	/*background-color: rgba(231,29,54,0.1);*/
+}
+
+div.tile div,
+div.tile p,
+div.tile img,
+div.tile h1,
+div.tile h2,
+div.tile h3,
+div.tile h4,
+div.tile h5,
+div.tile h6 {
+	/*background-color: var(--main-bg-color);*/
+}
+
+div.tile > img.tile-img {
+	margin: 0;
+	padding: 5px;
+	height: 150px;
+	width: 150px;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 10px;
+}
+
+div.tile > .tile-icon {
+	display: block;
+	font-size: 7rem;
+	text-align: center;
+}
+
+div.tile > h5.tile-title {
+	letter-spacing: 1px;
+	padding: 15px;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.owl-item:hover .tooltip-text {
+	display: block;
+	width: 100%;
+	position: relative;
+  top: -50%;
+  left: 0;
+  visibility: visible;
+}
+
+/*tile*/
 /* loader */
 /*.loader-transitions {
 	position: fixed;
@@ -125,15 +252,16 @@ li.navbar-group > ul.navbar-list > li.navbar-item > a.navbar-link:hover {
 
 }
 
-section {
+section#about,
+section#skills,
+section#projects, {
 	min-height: 100vh;
 	min-width: 100vw;
 }
 
 section#about,
 section#skills,
-section#projects,
-section#contact {
+section#projects {
 	padding-top: 100px !important;
 }
 
@@ -163,19 +291,49 @@ div#left-about > img {
 	filter: drop-shadow(2px 4px 2px var(--main-strong-highlight));
 }
 
+div#right-about > h1 {
+	margin-bottom: 15px;
+}
 /*div#left-about > img {
 	height: 100%;
 	width: 100%;
 }*/
 
 /*skills*/
+section#skills {
+	padding-top: 85px !important;
+}
+
 section#skills.container-fluid,
 section#skills.container-fluid div.row {
 	margin: 0;
 	padding: 0;
 }
 
+section#skills div.techniques-card {
+	padding: 15px;
+	height: 300px;
+	background-color: var(--main-fg-color);
+	border: solid 1px var(--main-page-color-gainsboro);
+	border-radius: 5px;
+	opacity: 0.9;
+}
+
+section#skills div.techniques-card > .techniques-card-header {
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+section#skills div.techniques-card > p {
+	color: var(--main-bg-color) !important;
+}
+
 /*projects*/
+section#projects {
+	padding-top: 85px !important;
+}
+
 section#projects.container-fluid,
 section#projects.container-fluid div.row {
 	margin: 0;
@@ -183,8 +341,83 @@ section#projects.container-fluid div.row {
 }
 
 /*contact*/
+section#contact {
+	padding-top: 80px !important;
+	padding-bottom: 15px !important;
+}
+
 section#contact.container-fluid,
 section#contact.container-fluid div.row {
 	margin: 0;
 	padding: 0;
+}
+
+section#contact form {
+	padding: 10px;
+	background-color: var(--main-bg-color);
+	border-radius: 5px;
+}
+
+section#contact div#contact-tab {
+	padding: 5px;
+	padding-top: 35px;
+	border-radius: 5px;
+	background-color: var(--main-bg-color);
+}
+
+section#contact div#contact-tab .row,
+section#contact div#contact-tab > div.row div[class*="contact-item"] {
+	background-color: var(--main-bg-color);	
+}
+
+section#contact div#contact-tab > div.row div[class*="col"] > p.contact-header {
+	font-size: 1.3rem;
+	letter-spacing: 2px;
+	background-color: var(--main-secondary-highlight);
+	padding: 4px;
+	border-radius: 5px;
+}
+
+section#contact div#contact-tab > div.row div[class*="col"] {
+	margin: 0;
+	padding: 0;
+}
+
+section#contact div#contact-tab > div.row div[class*="contact-item"] div[class*="col"]{
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+section#contact div#contact-tab > div.row div[class*="contact-item"] {
+	text-align: center;
+	font-size: 12px;
+}
+
+section#contact div#contact-tab > div.row div[class*="col"] > img.contact-icon {
+	height: 15px;
+	width: 15px;
+}
+
+
+section#contact div#contact-tab > div.row div[class*="col"] > img.social-logo {
+	height: 45px;
+	width: 45px;
+	cursor: pointer;
+}
+
+/*footer*/
+footer.footer {
+	height: 50px;
+	width: 100vw;
+	line-height: 50px;
+	text-align: center;
+	background-color: var(--main-bg-color);
+}
+
+footer.footer > p {
+	margin: 0;
+	padding: 0;
+	color: var(--main-strong-highlight);
+	font-size: 10px;
 }
