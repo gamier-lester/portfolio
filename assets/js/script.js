@@ -2,6 +2,7 @@ window.onload = () => {
 	var isLoading = true;
 	var links = document.querySelectorAll('.navbar-link');
 	var sections = document.querySelectorAll('section');
+	var globalIndex = 0;
 
 	function disableLoader() {
 		document.querySelector('.loader-wrapper').style.display = 'none';
@@ -10,7 +11,8 @@ window.onload = () => {
 		// 	document.querySelector('.loader-transitions').style.display = 'none';
 		// }, 500);
 		setTimeout(() => {
-			document.querySelector('body').style.overflow = 'visible';
+			document.querySelector('body').style.overflow = 'auto';
+			document.body.style.overflowX = 'hidden';
 		}, 500)
 		isLoading = false;
 		return isLoading;
@@ -35,26 +37,29 @@ window.onload = () => {
 	  links[index].classList.add('active-nav');
 	}
 
+	let insertTextLoop = function () {
+		insertText(function () {
+			globalIndex++;
+
+			if (globalIndex < stringArr .length) {
+				insertTextLoop();
+			}
+		});
+
+	}
+
+	function insertText(callback) {
+		setTimeout(function () {
+			document.querySelector('#landing-magic').innerHTML += stringArr[globalIndex];
+			callback();
+		}, 50);
+	}
+
 	if (isLoading) { disableLoader(); }
 	enableSmoothNavigation();
 	watchNavStatus();
 	window.addEventListener('scroll', watchNavStatus);
 	// owl carousel
-	$('#experience-carousel').owlCarousel({
-    margin:10,
-    nav:true,
-    responsive:{
-      0:{
-          items:1
-      },
-      600:{
-          items:2
-      },
-      1000:{
-          items:3
-      }
-    }
-	});
 
 	$('#tools-carousel').owlCarousel({
 		loop:true,
@@ -77,5 +82,7 @@ window.onload = () => {
 		element.addEventListener('click', (event) => {
 			window.open(event.target.dataset.link);
 		});
-	})
+	});
+	var stringArr = "Hello! I am Lester and I am Full Stack Web Developer. I am very passionate with my profession because I believe that being able to do what you want while facing your responsibilities produces good vibes and helps people grow on both life and work.";
+	insertTextLoop(stringArr);
 }

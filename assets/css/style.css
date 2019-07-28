@@ -74,7 +74,7 @@ h1, h2, h3, h4, h5, h6 {
 
 div.owl-item > div.card > div.card-body > p.card-text {
 	font-size: 0.8rem;
-	height: 240px !important;
+	/*height: 240px !important;*/
 }
 
 div.owl-item > div.card > div.card-body > h6.card-subtitle {
@@ -95,6 +95,7 @@ div.tile {
 	padding: 0;
 	/*cursor: pointer;*/
 	/*background-color: rgba(231,29,54,0.1);*/
+	position: relative;
 }
 
 div.tile div,
@@ -140,16 +141,22 @@ div.tile > h5.tile-title {
   border-radius: 6px;
   padding: 5px 0;
   /* Position the tooltip */
+  /*position: absolute;*/
+  /*z-index: 1;*/
   position: absolute;
-  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
 }
 
 .owl-item:hover .tooltip-text {
-	display: block;
-	width: 100%;
-	position: relative;
-  top: -50%;
-  left: 0;
+	/*display: block;*/
+	/*width: 100%;*/
+	/*position: relative;*/
+  /*top: -50%;*/
+  /*left: 0;*/
+  /*visibility: visible;*/
   visibility: visible;
 }
 
@@ -267,10 +274,23 @@ section#projects {
 
 /*landing page*/
 section#home {
-	/*temporary design*/
-	min-height: 100vh;
-	min-width: 100vw;
-	background-color: lime;
+	position: relative;
+	height: 50vh;
+	width: 100vw;
+	background-image: url('https://firebasestorage.googleapis.com/v0/b/web-portfolio-f3a2d.appspot.com/o/assets%2Fimages%2Faction-blur-bulb-355904.jpg?alt=media&token=e81437bc-9fe8-47fe-a68d-8864885e3c87');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+section#home p {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: rgba(0,0,0,0.8);
+  padding: 20px;
+  border-radius: 25px;
 }
 
 /*about*/
@@ -298,6 +318,64 @@ div#right-about > h1 {
 	height: 100%;
 	width: 100%;
 }*/
+section#about div#left-about div#contact-tab-1 {
+	padding-bottom: 15px;
+}
+
+section#about div#left-about div#contact-tab-1,
+section#about div#left-about div#contact-tab-1 > div[class*="contact-item"] {
+	background-color: var(--main-bg-color);	
+}
+
+section#about div#left-about div#contact-tab-1 > div[class*="col"] > p.contact-header {
+	font-size: 1.3rem;
+	letter-spacing: 2px;
+	background-color: var(--main-secondary-highlight);
+	padding: 4px;
+	border-radius: 5px;
+}
+
+section#about div#left-about div#contact-tab-1 > div[class*="col"] {
+	margin: 0;
+	padding: 0;
+}
+
+section#about div#left-about div#contact-tab-1 > div.row div[class*="contact-item"] div[class*="col"]{
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+section#about div#left-about div#contact-tab-1 > div[class*="contact-item"] {
+	text-align: center;
+	font-size: 12px;
+}
+
+section#about div#left-about div#contact-tab-1 > div.row div[class*="col"] > img.contact-icon {
+	height: 15px;
+	width: 15px;
+}
+
+
+section#about div#left-about div#contact-tab-1 > div[class*="col"] > img.social-logo {
+	height: 45px;
+	width: 45px;
+	cursor: pointer;
+}
+
+.ml-15 {
+	margin-left: 15px
+}
+
+div#right-about .nav-pills a {
+	color: var(--main-fg-color);
+}
+
+div#right-about a.active {
+	/*display: none;*/
+	background-color: var(--main-strong-highlight);
+	color: var(--main-bg-color);
+}
 
 /*skills*/
 section#skills {
@@ -312,7 +390,7 @@ section#skills.container-fluid div.row {
 
 section#skills div.techniques-card {
 	padding: 15px;
-	height: 300px;
+	height: 225px;
 	background-color: var(--main-fg-color);
 	border: solid 1px var(--main-page-color-gainsboro);
 	border-radius: 5px;
@@ -358,7 +436,7 @@ section#contact form {
 	border-radius: 5px;
 }
 
-section#contact div#contact-tab {
+/*section#contact div#contact-tab {
 	padding: 5px;
 	padding-top: 35px;
 	border-radius: 5px;
@@ -405,7 +483,7 @@ section#contact div#contact-tab > div.row div[class*="col"] > img.social-logo {
 	width: 45px;
 	cursor: pointer;
 }
-
+*/
 /*footer*/
 footer.footer {
 	height: 50px;
