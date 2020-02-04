@@ -245,6 +245,11 @@ li.navbar-group > ul.navbar-list > li.navbar-item > a.navbar-link {
 	padding: 18px 20px;
 }
 
+a.navbar-link.disabled {
+	color: rgba(0,0,0,0.5);
+	cursor: not-allowed;
+}
+
 nav.navbar > ul.navbar-list > li.navbar-item > a.navbar-link:hover,
 li.navbar-group > ul.navbar-list > li.navbar-item > a.navbar-link:hover {
 	color: var(--main-strong-hightlight-bright);
