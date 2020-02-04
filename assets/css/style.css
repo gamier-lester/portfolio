@@ -244,7 +244,7 @@ li.navbar-group > ul.navbar-list > li.navbar-item > a.navbar-link {
 	text-decoration: none;
 	padding: 18px 20px;
 }
-
+a.navbar-link.disabled:hover,
 a.navbar-link.disabled {
 	color: rgba(0,0,0,0.5);
 	cursor: not-allowed;
