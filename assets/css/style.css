@@ -246,7 +246,7 @@ li.navbar-group > ul.navbar-list > li.navbar-item > a.navbar-link {
 }
 a.navbar-link.disabled:hover,
 a.navbar-link.disabled {
-	color: rgba(0,0,0,0.5);
+	color: rgba(0,0,0,0.5) !important;
 	cursor: not-allowed;
 }
 
